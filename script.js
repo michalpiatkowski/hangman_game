@@ -31,7 +31,21 @@ var words = [
     "urolog",
     "tapczan",
     "realizacja",
-    "szaman"
+    "szaman",
+    "czad",
+    "szok",
+    "windykacja",
+    "monstrancja",
+    "kaskader",
+    "kiełbasa",
+    "ciągnik",
+    "pęto",
+    "pięciolinia",
+    "reminiscencja",
+    "pisk",
+    "trzepaczka",
+    "kosodrzewina",
+    "chlebak"
 ];
 
 var word = words[Math.floor(Math.random() * words.length)];
