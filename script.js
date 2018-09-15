@@ -8,6 +8,7 @@ var words = [
     "dzidziuś",
     "piwo",
     "rogal",
+    "drzeworytnik",
     "reumatyzm",
     "pistacja",
     "koalicja",
@@ -45,7 +46,27 @@ var words = [
     "pisk",
     "trzepaczka",
     "kosodrzewina",
-    "chlebak"
+    "chlebak",
+    "realizacja",
+    "mydło",
+    "kalka",
+    "dualizm",
+    "semestr",
+    "kobra",
+    "kosmita",
+    "perspektywa",
+    "lira",
+    "rozchodniak",
+    "sromotnik",
+    "zmarszczka",
+    "kaktus",
+    "dąb",
+    "linoskoczek",
+    "pestka",
+    "kabel",
+    "szambo",
+    "polerowanie",
+    "stabilizator"
 ];
 
 var word = words[Math.floor(Math.random() * words.length)];
@@ -58,7 +79,6 @@ var wrongLetters = 0;
 var hiddenWord = "";
 
 //pętla robi myślniki
-
 for (var i = 0; i < wordLength; i++) {
     if (word.charAt(i) == " ") {
         hiddenWord = hiddenWord + " ";
@@ -75,7 +95,6 @@ function showWord() {
 window.onload = start;
 
 // zbiór liter
-
 var lettersArray = new Array(35);
 
 lettersArray[0] = "A";
@@ -158,13 +177,13 @@ function check(number) {
         var element = "letNr" + number;
         document.getElementById(element).style.background = 'green';
         document.getElementById(element).style.color = '#00C010';
-        document.getElementById(element).style.border = '3px solid yellow';
+        document.getElementById(element).style.border = '3px solid #44AA2F';
         document.getElementById(element).style.cursor = 'default';
     } else {
         var element = "letNr" + number;
-        document.getElementById(element).style.background = 'red';
+        document.getElementById(element).style.background = '#FF5733';
         document.getElementById(element).style.color = '#C00000';
-        document.getElementById(element).style.border = '3px solid salmon';
+        document.getElementById(element).style.border = '3px solid grey';
         document.getElementById(element).style.cursor = 'default';
         document.getElementById(element).setAttribute("onclick",";");
 
@@ -177,12 +196,12 @@ function check(number) {
 
     //wygrana
     if(word == hiddenWord) {
-        document.getElementById("alphabet").innerHTML = "Niesamowite!!! Odgadłeś to trudne i niecodzienne hasło! Gratulacje! "+word+'<br /><br /><span class="reset" onclick="location.reload()">Gramy jeszcze raz?</span>'
+        document.getElementById("alphabet").innerHTML = "Niesamowite!!! Nie jest łatwo odgadnąć tak trudne i niecodzienne słowo, jak "+word+ ", ale Tobie to się udało! Gratulacje!" + '<br /><br /><span class="reset" onclick="location.reload()">Gramy jeszcze raz?</span>'
     }
 
     //przegrana
     if(wrongLetters >= 11) {
-        document.getElementById("alphabet").innerHTML = "Ooooo, jaki smutek :( Przegrałeś i wisisz! Gejm ower!!! "+word+'<br /><br /><span class="reset" onclick="location.reload()">Zagraj jeszcze raz</span>'
+        document.getElementById("alphabet").innerHTML = "Ooooo, jaki smutek :( Przegrałeś i wisisz przez słowo "+word+'<br /><br /><span class="reset" onclick="location.reload()">Zagramy jeszcze raz?</span>'
     }
 
     showWord();
